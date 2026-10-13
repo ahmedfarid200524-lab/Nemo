@@ -1,0 +1,300 @@
+.settings-grid {
+  display: grid;
+  gap: 1rem;
+  /* mobile: one column, stacked 1, 2, 3, 4 */
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+}
+
+.pro-edit  { grid-area: one; }    /* card 1 */
+.not-edit  { grid-area: two; }    /* card 2 */
+.pass-edit { grid-area: three; }  /* card 3 */
+.acc-edit  { grid-area: four; }   /* card 4 */
+
+/* let the grid control the size of the cards */
+.settings-grid > .glassyy-bg {
+  width: auto;
+  height: auto;
+  min-width: 0;
+}
+
+
+.pro-edit  { grid-area: one; }    
+.not-edit  { grid-area: two; }    
+.pass-edit { grid-area: three; }  
+.acc-edit  { grid-area: four; }   
+
+
+
+.pro-edit{
+    
+    height: 250px;
+    border-radius: 30px;
+    padding: 20px;
+}
+.not-edit{
+    
+    height: 250px;
+    border-radius: 30px;
+    padding: 20px;
+
+}
+.acc-edit{
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 30px;
+}
+.pass-edit{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.setting-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.acc-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    background-color: rgb(88, 85, 85);
+    
+    position: relative;
+}
+.acc-img-cont{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+    background-color: rgb(88, 85, 85);
+    
+    position: relative;
+}
+.acc-img-cont img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.camera-set{
+    background-color: black;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    bottom: 0;
+    right: 0px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.up-btn{
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    
+}
+.rem-btn{
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background-color: red;
+    
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.toggle-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* track */
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.25s, border-color 0.25s;
+}
+
+/* knob */
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s;
+}
+
+/* on state */
+.toggle-switch input:checked + .toggle-slider {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(22px);
+}
+
+/* keyboard focus */
+.toggle-switch input:focus-visible + .toggle-slider {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.change-pass-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;  
+  padding-top: 10px;  
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.change-pass-form input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  color: #fff;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  outline: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.change-pass-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.change-pass-form input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.change-pass-btn {
+  padding: 0.9rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.24),
+    rgba(255, 255, 255, 0.08)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.change-pass-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.32),
+    rgba(255, 255, 255, 0.12)
+  );
+}
+
+.change-pass-btn:active {
+  transform: scale(0.98);
+}
+
+.acc-table {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 1.1rem;            /* bigger text */
+}
+
+/* borders only between rows */
+.acc-table tr + tr {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.acc-table th,
+.acc-table td {
+  padding: 1.25rem 1.1rem;      /* cell padding */
+  vertical-align: middle;
+}
+
+.acc-table th {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+}
+
+.acc-table th i {
+  width: 24px;
+  margin-right: 0.85rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+.acc-table td {
+  text-align: right;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* a bit tighter on small phones */
+@media (min-width: 700px) {
+  .acc-table {
+    font-size: 1rem;
+  }
+  .acc-table th,
+  .acc-table td {
+    padding: 1rem 0.6rem;
+  }
+  .settings-grid {
+    display: grid;
+  gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "one   two  four"
+      "three three four";
+  }
+}

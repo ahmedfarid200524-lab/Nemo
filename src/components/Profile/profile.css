@@ -1,0 +1,354 @@
+.profile-mob{
+    width: 100%;
+    height: 400px;
+}
+.mob-lower {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  min-height: 100vh;
+}
+.mob-username{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.profile-follow-btn {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 20px;
+  width: 300px;
+  font-weight: bold;
+  font-size: 18px;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.profile-follow-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.profile-follow-btn:active {
+  transform: scale(0.97);
+}
+.profile-wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+
+.profile-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    var(--hero-img);
+  background-size: cover;
+  background-position: center top; 
+  background-repeat: no-repeat;
+  transform: scale(1.02); 
+}
+
+.profile-mob {
+  flex: 0 0 40%;
+  min-height: 260px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2.5rem;
+}
+
+.mob-username h2 {
+  font-size: clamp(1.6rem, 8vw, 2.4rem); 
+}
+
+.mob-lower {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.mob-userimage{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: white;
+    overflow: hidden;
+    border: 1px solid white;
+}
+.mob-userimage img{
+width: 100%;
+    height: 100%;
+object-fit: cover;
+object-position: center;
+}
+.user-profile-post{
+    height: 250px;
+    width: 45%;
+    background-color: aliceblue;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.user-profile-post img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+}
+.settings-btn{
+  width: 50px;
+  height: 50px;
+
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(4px) saturate(140%);
+  backdrop-filter: blur(4px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-left-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.settings-btn button{
+background-color: transparent;
+border: none;
+}
+.settings-menu{
+ z-index: 100;
+  border-radius: 20px;
+ 
+  position: absolute;
+  top: 80px;
+}
+@media (max-width: 360px) {
+  .profile-mob { min-height: 220px; padding-bottom: 1.5rem; }
+  .mob-lower { padding: 1rem 0.75rem; border-radius: 22px 22px 0 0; }250px
+}
+
+
+@media (min-width: 576px) {
+  .mob-lower {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }}
+
+@media screen and (min-width:700px) {
+  .settings-menu{
+ .settings-menu{
+ 
+  border-radius: 20px;
+ 
+  position: absolute;
+  top: 80px;
+}
+}
+
+
+    .user-area{
+
+width: 500px;
+
+position: absolute;
+top: 150px;
+left: 300px;
+}
+.user-posts-area{
+   
+width: 100%;
+height: 250px;
+position: absolute;
+bottom: 60px;
+
+}
+.profile-user-img{
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    border-radius: 1000px;
+    overflow: hidden;
+}
+.profile-user-img img{
+width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-follow-btn {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 20px;
+  width: 300px;
+  font-weight: bold;
+  font-size: 18px;
+   background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(4px) saturate(140%);
+  backdrop-filter: blur(4px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-left-color: rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.posts-scroll {
+  --post-gap: 1.5rem;
+  display: flex;
+  gap: var(--post-gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 4px 14px; /* room for the hover lift and the scrollbar */
+
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.08);
+}
+
+/* every tile gets the same width: exactly 5 fit, the rest scroll */
+.posts-scroll .user-profile-post {
+  flex: 0 0 calc((100% - 4 * var(--post-gap)) / 5);
+  min-width: 0;
+}
+
+/* centers the tiles when there are few, but still scrolls from the start when there are many */
+.posts-scroll > :first-child {
+  margin-left: auto;
+}
+.posts-scroll > :last-child {
+  margin-right: auto;
+}
+
+/* glassy scrollbar (Chrome, Edge, Safari) */
+.posts-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+.posts-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+.posts-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.2)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+.posts-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.35)
+  );
+}
+
+.user-profile-post{
+    height: 80%;
+    width: 200px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.user-profile-post img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+}
+}
+
+.text-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.04)
+  );
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.text-tile:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* soft fade so cut-off text doesn't look chopped */
+.text-tile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
+  pointer-events: none;
+}
+
+.text-tile-icon {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.text-tile-body {
+  margin: 0;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  .text-tile {
+    padding: 0.75rem;
+  }
+  .text-tile-body {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 4;
+  }
+}
