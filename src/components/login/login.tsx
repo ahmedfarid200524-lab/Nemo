@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import  { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 import axios from 'axios'
 import {  useNavigate } from 'react-router-dom'
 import { authcontext } from '../context/authcontext'
-import Nemo from "./../../assets/nemo (2).jpg"
+
 
 
 type inputs = {
@@ -49,12 +49,11 @@ SetIsloading(false)
 
 
  } catch (e) {
-  console.log(e.response.data.message);
-  
-
+ 
+ 
   
 SetIsloading(false)
-toast.error(e.response.data.message);
+toast.error("Something went wrong");
 
  }
  

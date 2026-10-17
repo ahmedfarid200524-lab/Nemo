@@ -144,7 +144,7 @@ border: none;
 }
 @media (max-width: 360px) {
   .profile-mob { min-height: 220px; padding-bottom: 1.5rem; }
-  .mob-lower { padding: 1rem 0.75rem; border-radius: 22px 22px 0 0; }250px
+  .mob-lower { padding: 1rem 0.75rem; border-radius: 22px 22px 0 0; }
 }
 
 
@@ -338,7 +338,7 @@ width: 100%;
   font-weight: 500;
   word-break: break-word;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -349,6 +349,6 @@ width: 100%;
   }
   .text-tile-body {
     font-size: 0.85rem;
-    -webkit-line-clamp: 4;
+
   }
 }

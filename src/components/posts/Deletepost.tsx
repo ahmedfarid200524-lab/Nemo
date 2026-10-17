@@ -1,80 +1,68 @@
+import { useState, useRef, useEffect } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
-import { useState, useRef, useEffect } from 'react'
 import toast from 'react-hot-toast'
 
+const API_URL = 'https://route-posts.routemisr.com/posts'
 
-const Deletepost = ({id} :{id :string}) => {
-  const [showmenu, setshowmenu] = useState(false)
+const DeletePost = ({ id }: { id: string }) => {
+  const [showMenu, setShowMenu] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
+  const queryClient = useQueryClient()
 
-  
+  // Close the menu when clicking outside
   useEffect(() => {
-    function handleOutside(e: MouseEvent) {
+    const handleOutside = (e: MouseEvent) => {
       if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
-        setshowmenu(false)
+        setShowMenu(false)
       }
     }
     document.addEventListener('mousedown', handleOutside)
     return () => document.removeEventListener('mousedown', handleOutside)
   }, [])
 
-
-
-const querylclient =useQueryClient()
-
-  function deletepst(){
-    return axios.delete(`https://route-posts.routemisr.com/posts/${id}` , {
-        headers:{
-            Authorization: "Bearer "+localStorage.getItem("token")
-        }
-    })
-  }
-
- const{ isPending ,mutate}= useMutation({
-    mutationFn:deletepst,
-    onSuccess:(data) =>{
-        querylclient.invalidateQueries({
-            queryKey:["posts"],
-        })
-        toast.success("Post deleted")
-
+  const { mutate: deletePost, isPending } = useMutation({
+    mutationFn: () =>
+      axios.delete(`${API_URL}/${id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['posts'] })
+      toast.success('Post deleted')
+      setShowMenu(false)
     },
-    onError:(error) =>{
-        toast.error("errrorrr")
-    }
-    
+    onError: () => {
+      toast.error('Failed to delete post')
+    },
   })
-
-
-
-
-
-
-
 
   return (
     <div
       ref={wrapRef}
-      className='d-flex justify-content-center align-items-center h-50 position-relative'
+      className="d-flex justify-content-center align-items-center h-50 position-relative"
     >
       <button
-        type='button'
-        className='postdel-btn text-secondary fs-1 h-100 d-flex justify-content-center align-items-center'
-        onClick={() => setshowmenu(!showmenu)}
-        aria-label='Post options'
-        aria-expanded={showmenu}
+        type="button"
+        className="postdel-btn text-secondary fs-1 h-100 d-flex justify-content-center align-items-center"
+        onClick={() => setShowMenu((prev) => !prev)}
+        aria-label="Post options"
+        aria-expanded={showMenu}
       >
         ...
       </button>
 
-      {showmenu && (
-        <div className='glassyy-bg  pst-menu position-absolute text-center'>
-          <button className='btn text-white  border-0' >
-            edit
+      {showMenu && (
+        <div className="glassyy-bg pst-menu position-absolute text-center">
+          <button type="button" className="btn text-white border-0">
+            Edit
           </button>
-          <button onClick={mutate} className='btn text-danger  border-0' >
-            Delete
+          <button
+            type="button"
+            className="btn text-danger border-0"
+            onClick={() => deletePost()}
+            disabled={isPending}
+          >
+            {isPending ? 'Deleting...' : 'Delete'}
           </button>
         </div>
       )}
@@ -82,4 +70,4 @@ const querylclient =useQueryClient()
   )
 }
 
-export default Deletepost
+export default DeletePost

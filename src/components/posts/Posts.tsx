@@ -4,8 +4,9 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import Deletepost from "./Deletepost";
 import { jwtDecode } from "jwt-decode";
+import type { Post } from "./../../Type"
 
-const Posts = ({ post, ispostdetails }: { post: post; ispostdetails: boolean }) => {
+const Posts = ({ post  }: { post:Post; ispostdetails: boolean }) => {
   const truncateWords = (text: string, limit = 3) => {
     const words = text.trim().split(/\s+/);
     return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;

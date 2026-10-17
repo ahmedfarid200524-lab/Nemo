@@ -660,7 +660,7 @@ left: 32%;
   height: 74%;
   object-fit: cover;
   object-position: right top;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 10%);
+
  
 }
 

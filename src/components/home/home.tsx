@@ -1,4 +1,3 @@
-import React, { useState, useEffect, use } from 'react'
 import Navbar from '../nav/navbar'
 import Posts from '../posts/Posts'
 import Loader from '../loader/loader'
@@ -13,19 +12,6 @@ function seenotifications(){
   navigate("/Notifications")
 }
 
-
- 
- 
-
-
-    
-  
-
- 
-
-
-
- 
 
 function getallposts(){
   return axios.get("https://route-posts.routemisr.com/posts" , {
@@ -70,9 +56,9 @@ return (
     
 
     <div className="post-grid mb-5">
-      {data?.data.data.posts.map(function(post ,idx){
-        return  <Posts key={idx} post={post} />
-      })}
+     {data?.data.data.posts.map(function(post: any, idx: number){
+  return  <Posts key={idx} post={post} ispostdetails={false} />
+})}
     </div>
   </>
 

@@ -53,12 +53,12 @@ SetIsloading(false)
 
 
  } catch (e) {
-  console.log(e.response.data.message);
+ 
   
 
   
 SetIsloading(false)
-toast.error(e.response.data.message);
+toast.error("Something went wrong");
 
  }
  
